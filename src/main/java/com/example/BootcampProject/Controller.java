@@ -29,11 +29,12 @@ import org.springframework.web.bind.annotation.RequestParam;
                                          String password, @RequestParam(value="Password", required = false)
             String username, HttpServletRequest request, HttpServletResponse response) {
         if (null == username || null == password) {
-            return "<form action=">\n +
-                    "Username: <input type='text' username = 'Username' value="><br/>\n"+
-                    "Password: <input type='text' password = 'Password' value ="><br/>\n"+
-                    "<input type='submit' value ='Login' </form><br/>\n" +
-                            "<a href='/'>Back</a>\n";
+            return "<form action=" >\n +
+                    "Username: <input type='text' username = 'Username' value=" ><br / >\n "+
+            "Password: <input type='text' password = 'Password' value =" ><br / >\n "+
+            "<input type='submit' value ='Login' </form><br/>\n" +
+                    "<a href='/'>Back</a>\n";
         }
+
     }
-}
+    }
