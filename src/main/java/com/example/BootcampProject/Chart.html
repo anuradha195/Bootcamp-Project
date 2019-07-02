@@ -58,8 +58,14 @@ data: data,
 });
 }
 
-$("#renderBtn").click(
-function () {
+$.ajax({
+         url: "http://localhost:8080/chart", //contoller method from back
+         type: "GET",
+         dataType: "json",
+         success: function(steps) {
+
+           console.log(steps);
+           renderChart(steps.steps, steps.days); {
  data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
 labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 renderChart(data, labels);
