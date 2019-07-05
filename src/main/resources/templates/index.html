@@ -1,26 +1,90 @@
+<!doctype html>
 <html lang="en">
 <head>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="424969099056-aa8ifrr6ammujn7qtoog50rbpqe96rnp.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bootcamp Project Summer 2019</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <base href="/" />
+    <link rel="stylesheet" type="text/css"
+          href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 2400px;
+}
+.responsive {
+  width: 100%;
+  height: auto;
+}
+.container img {
+  width: 100%;
+  height: auto;
+}
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: url('https://i.ibb.co/q114Pjz/Log-In-Google-Btn.png') no-repeat;
+  background-position: top left;
+  background-color: white;
+  width: 555px;
+  height: 110px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+</style>
 </head>
-<body>
-<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-<script>
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+<body ng-app="app" ng-controller="home as home">
+<!--	<h1>Login</h1>-->
+<div class="container" ng-show="!home.authenticated">
+    <div class="container">
+        <img src="https://i.ibb.co/s3Vnppf/Step-Background-Copy-with-logo.png">
+        <div class="btn" onclick="location.href='/connect/google'" type="button"></div>
+        <!--			<button class="btn"></button>-->
+    </div>
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
+    <!--		<div>-->
+    <!--			With Google: <a href="/connect/google">click here</a>-->
+    <!--		</div>-->
+
+</div>
+<div class="container" ng-show="home.authenticated">
+    Logged in as: <span ng-bind="home.user"></span>
+</div>
+<div>
+    <button ng-click="home.logout()" class="btn btn-primary">Logout</button>
+</div>
 </body>
+<script type="text/javascript" src="/webjars/angularjs/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module("app", []).controller("home", function($http) {
+		var self = this;
+		$http.get("/user").success(function(data) {
+			self.user = data.userAuthentication.details.name;
+			self.authenticated = true;
+		}).error(function() {
+			self.user = "N/A";
+			self.authenticated = false;
+		});
+		self.logout = function() {
+			$http.post('/logout', {}).success(function() {
+				self.authenticated = false;
+				$location.path("/");
+			}).error(function(data) {
+				console.log("Logout failed")
+				self.authenticated = false;
+			});
+		};
+	});
+</script>
 </html>
