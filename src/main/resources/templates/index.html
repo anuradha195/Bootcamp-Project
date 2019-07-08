@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Bootcamp Project Summer 2019</title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="/" />
     <link rel="stylesheet" type="text/css"
           href="/webjars/bootstrap/css/bootstrap.min.css" />
@@ -35,12 +35,15 @@
   background: url('https://i.ibb.co/q114Pjz/Log-In-Google-Btn.png') no-repeat;
   background-position: top left;
   background-color: white;
-  width: 555px;
-  height: 110px;
+  width: 500px;
+  height: 90px;
   padding: 12px 24px;
-  border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 24px;
+}
+
+.btn:hover {
+box-shadow: 0 24px 32px 0 rgba(0,0,0,0.24), 0 34px 100px 0 rgba(0,0,0,0.19);
 }
 </style>
 </head>
@@ -48,7 +51,7 @@
 <!--	<h1>Login</h1>-->
 <div class="container" ng-show="!home.authenticated">
     <div class="container">
-        <img src="https://i.ibb.co/s3Vnppf/Step-Background-Copy-with-logo.png">
+        <img src="https://i.ibb.co/SKJJP8r/Background-Logo-on-Top.png">
         <div class="btn" onclick="location.href='/connect/google'" type="button"></div>
         <!--			<button class="btn"></button>-->
     </div>
@@ -57,7 +60,7 @@
     <!--			With Google: <a href="/connect/google">click here</a>-->
     <!--		</div>-->
 
-</div>
+</div>5
 <div class="container" ng-show="home.authenticated">
     Logged in as: <span ng-bind="home.user"></span>
 </div>
