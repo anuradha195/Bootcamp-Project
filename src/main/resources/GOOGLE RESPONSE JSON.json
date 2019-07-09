@@ -1,0 +1,152 @@
+{
+  "bucket": [
+    {
+      "startTimeMillis": "1561669200000",
+      "endTimeMillis": "1561755600000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": []
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1561755600000",
+      "endTimeMillis": "1561842000000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1561786784531074393",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1561838045542278100",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 77
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1561842000000",
+      "endTimeMillis": "1561928400000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1561865964180661531",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1561928400000000000",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 4470
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1561928400000",
+      "endTimeMillis": "1562014800000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1561928400000000000",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1562011909250342513",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 8771
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1562014800000",
+      "endTimeMillis": "1562101200000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1562047041090066141",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1562098104593284550",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 2514
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1562101200000",
+      "endTimeMillis": "1562187600000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1562131189930196518",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1562185607690100594",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 603
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "startTimeMillis": "1562187600000",
+      "endTimeMillis": "1562263038000",
+      "dataset": [
+        {
+          "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
+          "point": [
+            {
+              "startTimeNanos": "1562211578947832983",
+              "originDataSourceId": "raw:com.google.step_count.cumulative:motorola:Moto G (5S) Plus:c5304cda931e8beb:Step Counter",
+              "endTimeNanos": "1562260254803623356",
+              "value": [
+                {
+                  "mapVal": [],
+                  "intVal": 2723
+                }
+              ],
+              "dataTypeName": "com.google.step_count.delta"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
