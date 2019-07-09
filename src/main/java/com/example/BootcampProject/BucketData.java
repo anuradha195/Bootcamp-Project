@@ -8,8 +8,8 @@ public class BucketData {
    private PointData[] point;
 
    public String getDataSourceId() {
-      return dataSourceId;
-   }
+      return dataSourceId;}
+
 
    public void setDataSourceId(String dataSourceId) {
       this.dataSourceId = dataSourceId;

@@ -15,14 +15,17 @@ public class PointData {
 
     public String getStartTimeNanos() {
         return startTimeNanos;
+
     }
 
     public void setStartTimeNanos(String startTimeNanos) {
         this.startTimeNanos = startTimeNanos;
+
     }
 
     public String getOriginDataSourceId() {
         return originDataSourceId;
+
     }
 
     public void setOriginDataSourceId(String originDataSourceId) {
