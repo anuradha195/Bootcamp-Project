@@ -1,0 +1,12 @@
+//package com.example.BootcampProject.JSon_test;
+//
+//import lombok.Data;
+//
+//@Data
+//public class BucketTimes {
+//
+//    private long startTimeMillis;
+//    private long endTImeMillis;
+//
+//    public BucketTimes(){}
+//}
