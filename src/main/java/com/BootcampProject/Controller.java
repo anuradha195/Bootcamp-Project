@@ -4,9 +4,12 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeToken
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -31,8 +34,8 @@ public class Controller {
     }
 
     @GetMapping("/Chart")
-    @ResponseBody
-    public String stepchart(@RequestParam String code) throws IOException {
+    //@ResponseBody
+    public String stepchart(@RequestParam String code, Model model) throws IOException {
         GoogleTokenResponse tokenResponse =
                 new GoogleAuthorizationCodeTokenRequest(
                         new NetHttpTransport(),
@@ -45,7 +48,11 @@ public class Controller {
                         .execute();
         user.setAccessToken(tokenResponse.getAccessToken());
         DailySteps[] results = user.login();
-        return graph(results);
+        model.addAttribute("steps", Arrays.asList(results).stream().map(u -> u.getSteps()).collect(Collectors.toList()));
+        model.addAttribute("labels", Arrays.asList(results).stream().map(u -> u.getDate()).collect(Collectors.toList()));
+
+        return "Chart";
+        // return graph(results);
     }
 
     public String graph(DailySteps[] results) {
