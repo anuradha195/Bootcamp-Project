@@ -1,4 +1,4 @@
-package com.example.BootcampProject;
+package com.BootcampProject;
 
 public class DailySteps {
     private String date;

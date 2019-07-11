@@ -1,1 +1,0 @@
-SELECT * FROM database_users.user_details;
