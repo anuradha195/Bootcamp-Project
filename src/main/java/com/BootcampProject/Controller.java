@@ -19,12 +19,11 @@ public class Controller {
     private String clientSecret = "LoavMBL_6hY0Ajzqjt3NR3EM";
 
     @GetMapping("/")
-    @ResponseBody
+//    @ResponseBody
     public String login(String username, String password) {
-        User user = new User(username, password);
-        this.user = user;
-        return  "<a href='/getTokens'>Sign in with Google<a><br/>\n";
-        //return "index";
+        this.user = new User(username, password);
+//        return  "<a href='/getTokens'>Sign in with Google<a><br/>\n";
+        return "index";
     }
 
     @GetMapping("/getTokens")
