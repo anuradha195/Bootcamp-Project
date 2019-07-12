@@ -1,6 +1,5 @@
 <!doctype html>
-<html xmlns:th="http://wwww.thymeleaf.org">
-
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +8,6 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="/" />
-
     <link rel="stylesheet" type="text/css"
           href="/webjars/bootstrap/css/bootstrap.min.css" />
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
@@ -88,15 +86,13 @@
 </head>
 <body>
 <div class="container">
-    <img src="https://i.ibb.co/SKJJP8r/Background-Logo-on-Top.png">
-    <button class="btn">Sign in with Google</button>
 
-    <ul>
-        <li th:each="ty : ${allTypes}">
-            <input type="radio" th:field="*{type}" th:value="${ty}" />
-            <label th:for="${#ids.prev('type')}" th:text="#{${'seedstarter.type.' + ty}}">Wireframe</label>
-        </li>
-    </ul>
+    <img src="https://i.ibb.co/SKJJP8r/Background-Logo-on-Top.png">
+    <a class="btn" href="/getTokens">Sign in with Google</a>
+<!--    <button class="btn">Sign in with Google</button>-->
+
 </div>
+
+
 </body>
 </html>

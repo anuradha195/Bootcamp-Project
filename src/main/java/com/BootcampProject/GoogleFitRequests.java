@@ -74,7 +74,7 @@ class GoogleFitRequests {
             String day = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
             if (calDay < 10) day = "0" + day;
             if (calMonth < 10) month = "0" + month;
-            String date = day + "." + month + "." + year;
+            String date = day + "." + month + "." + year;//date formate
             DailySteps stepsInDay = new DailySteps();
             stepsInDay.setDate(date);
             stepsInDay.setSteps(steps);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -30,9 +30,7 @@
 </style>
 <body>
 
-<button id="renderBtn">
-    Render
-</button>
+
 <div class="container">
     <canvas id="myChart"></canvas>
 </div>
@@ -42,8 +40,7 @@
 
 
 
-<script>
-
+<script th:inline="javascript">
 function renderChart(data, labels) {
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
@@ -57,20 +54,14 @@ data: data,
 },
 });
 }
-
-$.ajax({
-         url: "http://localhost:8080/chart", //contoller method from back
-         type: "GET",
-         dataType: "json",
-         success: function(steps) {
-
-           console.log(steps);
-           renderChart(steps.steps, steps.days); {
- data = [20000, 14000, 12000, 15000, 18000, 19000, 22000];
-labels =  ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+//$("#renderBtn").click(
+window.onload = function () {
+ data = /*[[${steps}]]*/ [100,900];
+ //[20000, 14000, 12000, 15000, 18000, 19000, 22000];
+labels = /*[[${labels}]]*/ ['',''];
+//["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 renderChart(data, labels);
-}
-);
+};
 </script>
 
 </body>
