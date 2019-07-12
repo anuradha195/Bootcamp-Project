@@ -100,6 +100,7 @@
 			<groupId>com.google.oauth-client</groupId>
 			<artifactId>google-oauth-client-jetty</artifactId>
 			<version>1.11.0-beta</version>
+<<<<<<< HEAD
 		</dependency>
         <dependency>
             <groupId>javax.json</groupId>
@@ -127,6 +128,14 @@
 		</dependency>
 
 
+=======
+		</dependency>
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+>>>>>>> 55d9c3c764bab79ef8411b88be59f7dbb0147519
     </dependencies>
 
 	<build>

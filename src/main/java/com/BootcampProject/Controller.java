@@ -52,6 +52,7 @@ public class Controller {
 
         return "Chart";
         // return graph(results);
+<<<<<<< HEAD
     } //end of stepchart
 
     @RequestMapping(value = {"/WeeklyChart"})
@@ -84,6 +85,11 @@ public class Controller {
     }
 
         public String graph(DailySteps[] results) {
+=======
+    }
+
+    public String graph(DailySteps[] results) {
+>>>>>>> 55d9c3c764bab79ef8411b88be59f7dbb0147519
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < results.length; i++) {
             sb.append(results[i].getDate());
@@ -92,6 +98,7 @@ public class Controller {
         }
         return sb.toString();
     }
+<<<<<<< HEAD
 
     String str1="<!DOCTYPE html>\n"
             + "<html>\r\n" +
@@ -145,4 +152,6 @@ public class Controller {
             "</html>";
     String str4="['Date', 'Steps'],\n";
 
+=======
+>>>>>>> 55d9c3c764bab79ef8411b88be59f7dbb0147519
 }
