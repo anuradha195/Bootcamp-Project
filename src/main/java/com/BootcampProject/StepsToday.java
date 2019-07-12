@@ -25,32 +25,42 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 
-public class DBRequestsMonthly {
+public class StepsToday {
 
-	ArrayList<Date> dateListMonthly = new ArrayList<Date>();
-	List<Integer> stepsListMonthly = new ArrayList<Integer>();
+	ArrayList<Date> dateListWeekly = new ArrayList<Date>();
+	List<Integer> stepsListWeekly = new ArrayList<Integer>();
 	
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
-		DBRequestsMonthly req = new DBRequestsMonthly();
-		req.sendPost();
-		req.insertJSONtoDB();
-
+		StepsToday steps=new StepsToday();
+		steps.getJsonFromHttpRequest();
+		steps.getData();
 	}
-	public String sendPost() throws Exception {
+
+	public String getJsonFromHttpRequest() throws Exception {
 
 		HttpClient httpclient = HttpClients.createDefault();
 		HttpPost httppost = new HttpPost("https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate");
 		httppost.addHeader("Content-Type", "application/json");
 		httppost.addHeader("Authorization",
-				"Bearer ya29.GltDB493chE4BSKHTeUNGASsOQdPfIoRBRo6-1pXsvTuQ4zn9cJHekT61ONlZSacGJtznRYdPzwoGgMWju2d2OepOp7cNAlJC0QuZm4VGZXvhH2YErex_K54sSKo");
+				"Bearer ya29.GltDB4WDeemys3l9_maMMVH65Sdsc1wbUW5nGSYUout4Vm9L9-RCVwsRKXUnXANMLiGHO3QzUrlZr9jj61jpJa8PGZ5LxmE-VTSeXnTe1Svr940fyNPFaQOgTcbS");
+		
 		// GET Today's date
-		// DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Calendar endcal = Calendar.getInstance();
+		endcal.set(Calendar.HOUR, 0);
+		endcal.set(Calendar.MINUTE, 0);
+		endcal.set(Calendar.SECOND, 0);
+		// System.out.println("Format Time Now: "+simpleformat.format(now.getTime()));
+		endcal.set(Calendar.HOUR_OF_DAY, 0);
+		long starttime = endcal.getTimeInMillis();
+		long endtime = System.currentTimeMillis();
+		System.out.println("Start time : "+starttime);
+		System.out.println("End time : "+endtime);
+
 		// Request parameters and other properties.
 		httppost.setEntity(new StringEntity(" {\r\n" + "  \"aggregateBy\": [{\r\n" + "    \"dataSourceId\":\r\n"
 				+ "      \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\r\n"
 				+ "  }],\r\n" + "  \"bucketByTime\": { \"durationMillis\": 86400000 },\r\n" + "  \"startTimeMillis\": "
-				+ "1559336400000" + ",\r\n" + "  \"endTimeMillis\": " + "1561928400000" + "\r\n" + "}"));
+				+ starttime + ",\r\n" + "  \"endTimeMillis\": " + endtime + "\r\n" + "}"));
 
 		// Execute and get the response.
 		HttpResponse response = httpclient.execute(httppost);
@@ -66,7 +76,7 @@ public class DBRequestsMonthly {
 			}
 			System.out.println(result);
 			FileWriter fw = new FileWriter(
-					"C:\\Users\\satpal kumar\\eclipse-workspace\\BootcampProject\\src\\main\\resources\\json\\jsonMonthly.json");
+					"C:\\Users\\satpal kumar\\eclipse-workspace\\BootcampProject\\src\\main\\resources\\json\\jsonToday.json");
 			fw.write(result);
 			System.out.println("Written json result to file");
 			fw.close();
@@ -75,24 +85,15 @@ public class DBRequestsMonthly {
 		return result;
 	}
 
-	public void insertJSONtoDB() throws Exception {
-
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_json", "root", "Student007");
-		
-		try {
-			PreparedStatement stmt = con.prepareStatement("insert into  stepsdetails values ( 0, ?, ? )");
-			// InputStream file = new
-			// FileInputStream("C:\\Users\\Git\\BootcampProject\\BootcampJson.json");
+	public void getData() throws Exception {
 
 			InputStream file = new FileInputStream(
-					"C:\\Users\\satpal kumar\\eclipse-workspace\\BootcampProject\\src\\main\\resources\\json\\jsonMonthly.json");
+					"C:\\Users\\satpal kumar\\eclipse-workspace\\BootcampProject\\src\\main\\resources\\json\\jsonToday.json");
 			JsonReader reader = Json.createReader(file);
 			JsonObject jsonObj = reader.readObject();
-			System.out.println("Json object is: " + jsonObj);
 			reader.close();
+			//Get json Array called bucket
 			JsonArray jsonArrayBucket = jsonObj.getJsonArray("bucket");
-			// System.out.println("Json Array dataset: "+jsonArrayBucket);
 
 			for (Object projectObj : jsonArrayBucket.toArray()) {
 				JsonObject project = (JsonObject) projectObj;
@@ -103,49 +104,25 @@ public class DBRequestsMonthly {
 				Date mydate = new Date(timeInMillis);
 				java.sql.Date date = new java.sql.Date(mydate.getTime());
 
-				// java.sql.Timestamp date = new java.sql.Timestamp(timeInMillis);
 				for (Object issueObj : jsonArrayDataset.toArray()) {
 					JsonObject datasetObj = (JsonObject) issueObj;
-					// System.out.println("dataset object is : "+datasetObj);
 					JsonArray jsonArraypoint = (JsonArray) datasetObj.get("point");
 
 					for (Object issueObj1 : jsonArraypoint.toArray()) {
 						JsonObject pointObj = (JsonObject) issueObj1;
-						// System.out.println("point object is : "+pointObj);
+						
 						JsonArray jsonArrayvalue = (JsonArray) pointObj.get("value");
-						// index1++;
+						
 						for (Object issueObj2 : jsonArrayvalue.toArray()) {
 							JsonObject valueObj = (JsonObject) issueObj2;
 							System.out.println(date + " --> Steps Count is: " + valueObj.getInt("intVal"));
-							// Retrieved data and inserting into the database
-							dateListMonthly.add(date);
-							int x=valueObj.getInt("intVal");
-							stepsListMonthly.add(x);
-							stmt.executeUpdate("INSERT INTO stepsdetails VALUES (0 , '" + date + "','"
-									+ valueObj.getInt("intVal") + "')");
-							System.out.println("Data inserted");
-
+							// Retrieved data and inserting into the List (dateList and Steps List)
+							dateListWeekly.add(date);
+							stepsListWeekly.add(valueObj.getInt("intVal"));
 						}
 					}
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			System.out.println("Date list is : "+dateListMonthly);
-			System.out.println("Steps list is : "+stepsListMonthly);
-			
-			try {
-				if (con != null) {
-					con.close();
-
-				}
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-		}
-
-	}
-
-}
+		}  //end of method getData()
+	
+} //end of class
