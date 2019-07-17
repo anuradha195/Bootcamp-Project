@@ -93,6 +93,11 @@ public class Controller {
         return sb.toString();
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "logout";
+    }
+
     String str1="<!DOCTYPE html>\n"
             + "<html>\r\n" +
             "  <head>\r\n" +
