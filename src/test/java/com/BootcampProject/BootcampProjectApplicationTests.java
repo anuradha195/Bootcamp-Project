@@ -1,4 +1,4 @@
-package com.example.BootcampProject;
+package com.BootcampProject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

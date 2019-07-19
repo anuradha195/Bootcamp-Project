@@ -1,4 +1,4 @@
-package com.example.BootcampProject;
+package com.BootcampProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BootcampProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootcampProjectApplication.class, args);
-		//https://BootcampProject.com
-	} 
 
-}
+		SpringApplication.run(BootcampProjectApplication.class, args);
+
+	}//end main
+}//end class
