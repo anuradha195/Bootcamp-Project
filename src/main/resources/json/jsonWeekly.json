@@ -1,8 +1,13 @@
 {
  "bucket": [
   {
+<<<<<<< HEAD
    "startTimeMillis": "1562792400254",
    "endTimeMillis": "1562878800254",
+=======
+   "startTimeMillis": "1562274000253",
+   "endTimeMillis": "1562360400253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -24,8 +29,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1562878800254",
    "endTimeMillis": "1562965200254",
+=======
+   "startTimeMillis": "1562360400253",
+   "endTimeMillis": "1562446800253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -47,8 +57,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1562965200254",
    "endTimeMillis": "1563051600254",
+=======
+   "startTimeMillis": "1562446800253",
+   "endTimeMillis": "1562533200253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -70,8 +85,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1563051600254",
    "endTimeMillis": "1563138000254",
+=======
+   "startTimeMillis": "1562533200253",
+   "endTimeMillis": "1562619600253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -93,8 +113,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1563138000254",
    "endTimeMillis": "1563224400254",
+=======
+   "startTimeMillis": "1562619600253",
+   "endTimeMillis": "1562706000253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -116,8 +141,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1563224400254",
    "endTimeMillis": "1563310800254",
+=======
+   "startTimeMillis": "1562706000253",
+   "endTimeMillis": "1562792400253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",
@@ -139,8 +169,13 @@
    ]
   },
   {
+<<<<<<< HEAD
    "startTimeMillis": "1563310800254",
    "endTimeMillis": "1563397200254",
+=======
+   "startTimeMillis": "1562792400253",
+   "endTimeMillis": "1562878800253",
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
    "dataset": [
     {
      "dataSourceId": "derived:com.google.step_count.delta:com.google.android.gms:aggregated",

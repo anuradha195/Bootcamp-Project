@@ -27,8 +27,13 @@ import org.apache.http.impl.client.HttpClients;
 
 public class StepsToday {
 
+<<<<<<< HEAD:src/main/java/com/BootcampProject/StepsToday.java
 	ArrayList<Date> dateListDaily = new ArrayList<Date>();
 	List<Integer> stepsListDaily = new ArrayList<Integer>();
+=======
+	ArrayList<Date> dateListWeekly = new ArrayList<Date>();
+	List<Integer> stepsListWeekly = new ArrayList<Integer>();
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba:src/main/java/com/BootcampProject/StepsToday.java
 	
 	public static void main(String[] args) throws Exception {
 		StepsToday steps=new StepsToday();
@@ -42,19 +47,29 @@ public class StepsToday {
 		HttpPost httppost = new HttpPost("https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate");
 		httppost.addHeader("Content-Type", "application/json");
 		httppost.addHeader("Authorization",
+<<<<<<< HEAD:src/main/java/com/BootcampProject/StepsToday.java
 				"Bearer ya29.GltJB-bIkYhRhOvLUZ17cZUdKJoFmMrsuZVU59WnDmDaKSaW2wKojCwewWn4muPcTH0CcHz0MAAnSZ1xH5k2JiuzQh5wJL8zV95DZ8bWr0ArfDPrqkqTZ91IXEWU");
 		
 		// GET Today's date
 		long DAY_IN_MS = 1000 * 60 * 60 * 24;
+=======
+				"Bearer ya29.GltDB4WDeemys3l9_maMMVH65Sdsc1wbUW5nGSYUout4Vm9L9-RCVwsRKXUnXANMLiGHO3QzUrlZr9jj61jpJa8PGZ5LxmE-VTSeXnTe1Svr940fyNPFaQOgTcbS");
+		
+		// GET Today's date
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba:src/main/java/com/BootcampProject/StepsToday.java
 		Calendar endcal = Calendar.getInstance();
 		endcal.set(Calendar.HOUR, 0);
 		endcal.set(Calendar.MINUTE, 0);
 		endcal.set(Calendar.SECOND, 0);
 		// System.out.println("Format Time Now: "+simpleformat.format(now.getTime()));
 		endcal.set(Calendar.HOUR_OF_DAY, 0);
+<<<<<<< HEAD:src/main/java/com/BootcampProject/StepsToday.java
 		long todayMidNightTime = endcal.getTimeInMillis();
 		Date startdate = new Date(todayMidNightTime - (1 * DAY_IN_MS));
 		long starttime = startdate.getTime();
+=======
+		long starttime = endcal.getTimeInMillis();
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba:src/main/java/com/BootcampProject/StepsToday.java
 		long endtime = System.currentTimeMillis();
 		System.out.println("Start time : "+starttime);
 		System.out.println("End time : "+endtime);
@@ -120,8 +135,13 @@ public class StepsToday {
 							JsonObject valueObj = (JsonObject) issueObj2;
 							System.out.println(date + " --> Steps Count is: " + valueObj.getInt("intVal"));
 							// Retrieved data and inserting into the List (dateList and Steps List)
+<<<<<<< HEAD:src/main/java/com/BootcampProject/StepsToday.java
 							dateListDaily.add(date);
 							stepsListDaily.add(valueObj.getInt("intVal"));
+=======
+							dateListWeekly.add(date);
+							stepsListWeekly.add(valueObj.getInt("intVal"));
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba:src/main/java/com/BootcampProject/StepsToday.java
 						}
 					}
 				}

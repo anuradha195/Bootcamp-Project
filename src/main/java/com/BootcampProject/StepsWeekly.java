@@ -50,7 +50,11 @@ public class StepsWeekly {
 		HttpPost httppost = new HttpPost("https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate");
 		httppost.addHeader("Content-Type", "application/json");
 		httppost.addHeader("Authorization",
+<<<<<<< HEAD
 				"Bearer ya29.GltJB-bIkYhRhOvLUZ17cZUdKJoFmMrsuZVU59WnDmDaKSaW2wKojCwewWn4muPcTH0CcHz0MAAnSZ1xH5k2JiuzQh5wJL8zV95DZ8bWr0ArfDPrqkqTZ91IXEWU");
+=======
+				"Bearer ya29.GltDBzCZQBvwmLkFlpgEvfYOrGwx7lswJTZMoN05sFg_uPYC7YBbn_tMuKQ_G8Wse4NydzgUOohlkhqHy0VpQSmX809Jmu5ZvLMJN1pmlgCLMLAtSRncAjsOTAoM");
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
 		// GET Today's date
 
 		long DAY_IN_MS = 1000 * 60 * 60 * 24;

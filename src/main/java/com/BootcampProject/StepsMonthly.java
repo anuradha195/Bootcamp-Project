@@ -44,7 +44,11 @@ public class StepsMonthly {
 		HttpPost httppost = new HttpPost("https://www.googleapis.com/fitness/v1/users/me/dataset:aggregate");
 		httppost.addHeader("Content-Type", "application/json");
 		httppost.addHeader("Authorization",
+<<<<<<< HEAD
 				"Bearer ya29.GltJB-bIkYhRhOvLUZ17cZUdKJoFmMrsuZVU59WnDmDaKSaW2wKojCwewWn4muPcTH0CcHz0MAAnSZ1xH5k2JiuzQh5wJL8zV95DZ8bWr0ArfDPrqkqTZ91IXEWU");
+=======
+				"Bearer ya29.GltDBzCZQBvwmLkFlpgEvfYOrGwx7lswJTZMoN05sFg_uPYC7YBbn_tMuKQ_G8Wse4NydzgUOohlkhqHy0VpQSmX809Jmu5ZvLMJN1pmlgCLMLAtSRncAjsOTAoM");
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
 		httppost.setEntity(new StringEntity(" {\r\n" + "  \"aggregateBy\": [{\r\n" + "    \"dataSourceId\":\r\n"
 				+ "      \"derived:com.google.step_count.delta:com.google.android.gms:estimated_steps\"\r\n"
 				+ "  }],\r\n" + "  \"bucketByTime\": { \"durationMillis\": 86400000 },\r\n" + "  \"startTimeMillis\": "
@@ -100,7 +104,11 @@ public class StepsMonthly {
 
 					for (Object issueObj2 : jsonArrayvalue.toArray()) {
 						JsonObject valueObj = (JsonObject) issueObj2;
+<<<<<<< HEAD
 						System.out.println(date + " --> Steps Count is: " + valueObj.getInt("intVal"));
+=======
+						//System.out.println(date + " --> Steps Count is: " + valueObj.getInt("intVal"));
+>>>>>>> 727ad8b94e61a0f3c43548c076fc25559a0645ba
 						// Retrieved data and inserting into the database
 						dateListMonthly.add(date);
 						int x = valueObj.getInt("intVal");
